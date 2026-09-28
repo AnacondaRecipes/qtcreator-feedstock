@@ -13,10 +13,11 @@ source:
     - 4.9/0002-Use-systemEnvironment-for-Start-and-Debug-External-A.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
@@ -45,8 +46,6 @@ requirements:
     - jom                                # [win]
     - make                               # [not win]
     - patchelf                           # [linux]
-    - patch     # [not win]
-    - m2-patch  # [win]
     - sed   # [not win]
   host:
     - qt-main 5.15.*
